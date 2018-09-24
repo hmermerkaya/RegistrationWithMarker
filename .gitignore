@@ -1,0 +1,13 @@
+/.metadata/
+build/
+CMakeFiles/
+bin/
+lib/
+*.ply
+CMakeCache.txt
+Makefile
+*.obj
+*.mtl
+*.exr
+__pycache__
+venv
