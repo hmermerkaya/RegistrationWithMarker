@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79d65b77-4dee-4865-8556-cd091f6821ae" name="Default" comment="" />
+    <list default="true" id="79d65b77-4dee-4865-8556-cd091f6821ae" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/RegistrationMultiwithSVD_v2.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/RegistrationWithMarker_SVD_TMinuit_SerialsFile.py" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/003726334247_1.png" afterPath="$PROJECT_DIR$/003726334247_1.png" />
+      <change beforePath="$PROJECT_DIR$/003726334247_1_depth.png" afterPath="$PROJECT_DIR$/003726334247_1_depth.png" />
+      <change beforePath="$PROJECT_DIR$/021401644747_0.png" afterPath="$PROJECT_DIR$/021401644747_0.png" />
+      <change beforePath="$PROJECT_DIR$/021401644747_0_depth.png" afterPath="$PROJECT_DIR$/021401644747_0_depth.png" />
+      <change beforePath="$PROJECT_DIR$/291296634347_0.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/291296634347_0_depth.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/291296634347_0_to_003726334247_1.out" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/291296634347_1.png" afterPath="$PROJECT_DIR$/291296634347_1.png" />
+      <change beforePath="$PROJECT_DIR$/291296634347_1_depth.png" afterPath="$PROJECT_DIR$/291296634347_1_depth.png" />
+      <change beforePath="$PROJECT_DIR$/291296634347_to_003726334247.out" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/291296634347_to_021401644747.out" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/RegistrationWithMarkerSVDTMinuit.py" afterPath="$PROJECT_DIR$/RegistrationWithMarkerSVDTMinuit.py" />
+      <change beforePath="$PROJECT_DIR$/RegistrationWithMarker_v2_tminuit.py" afterPath="$PROJECT_DIR$/RegistrationWithMarker_v2_tminuit.py" />
+      <change beforePath="$PROJECT_DIR$/ir_0.png" afterPath="$PROJECT_DIR$/ir_0.png" />
+      <change beforePath="$PROJECT_DIR$/ir_1.png" afterPath="$PROJECT_DIR$/ir_1.png" />
+      <change beforePath="$PROJECT_DIR$/tranformation.out" afterPath="$PROJECT_DIR$/tranformation.out" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,11 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RegistrationWithMarker_v2_tminuit.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/RegistrationWithMarker_v2_tminuit.py">
+      <file leaf-file-name="RegistrationWithMarker_SVD_TMinuit_SerialsFile_v2.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RegistrationWithMarker_SVD_TMinuit_SerialsFile_v2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="726">
-              <caret line="366" column="27" lean-forward="false" selection-start-line="366" selection-start-column="27" selection-end-line="366" selection-end-column="27" />
+            <state relative-caret-position="7812">
+              <caret line="446" column="0" lean-forward="false" selection-start-line="446" selection-start-column="0" selection-end-line="446" selection-end-column="0" />
               <folding>
                 <element signature="e#35#53#0" expanded="true" />
               </folding>
@@ -23,45 +43,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RegistrationWithMarkerSVDTMinuit.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RegistrationWithMarkerSVDTMinuit.py">
+      <file leaf-file-name="RegistrationMultiwithSVD.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RegistrationMultiwithSVD.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2556">
-              <caret line="339" column="34" lean-forward="false" selection-start-line="339" selection-start-column="34" selection-end-line="339" selection-end-column="34" />
+            <state relative-caret-position="7218">
+              <caret line="413" column="25" lean-forward="false" selection-start-line="413" selection-start-column="25" selection-end-line="413" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="calibrateKinectv2.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/calibrateKinectv2.py">
+      <file leaf-file-name="RegistrationMultiwithSVD_v2.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/RegistrationMultiwithSVD_v2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7362">
-              <caret line="419" column="10" lean-forward="false" selection-start-line="419" selection-start-column="10" selection-end-line="419" selection-end-column="10" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sampleleastsq.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sampleleastsq.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="34" column="65" lean-forward="false" selection-start-line="34" selection-start-column="54" selection-end-line="34" selection-end-column="65" />
-              <folding>
-                <element signature="e#0#34#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tranformation.out" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tranformation.out">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="540">
+              <caret line="134" column="39" lean-forward="false" selection-start-line="134" selection-start-column="39" selection-end-line="134" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -81,7 +77,6 @@
       <find>key</find>
       <find>create</find>
       <find>hull</find>
-      <find>print</find>
       <find>corners</find>
       <find>array</find>
       <find>numpy</find>
@@ -90,6 +85,11 @@
       <find>coordsIR</find>
       <find>-&gt;</find>
       <find>SetPArameter</find>
+      <find>createContour</find>
+      <find>fileNames1</find>
+      <find>print</find>
+      <find>isbreak</find>
+      <find>clockwise</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -117,14 +117,18 @@
         <option value="$PROJECT_DIR$/calibrateKinectv2.py" />
         <option value="$PROJECT_DIR$/RegistrationWithMarker_v2_tminuit.py" />
         <option value="$PROJECT_DIR$/RegistrationWithMarkerSVDTMinuit.py" />
+        <option value="$PROJECT_DIR$/RegistrationWithMarker_SVD_TMinuit_SerialsFile.py" />
+        <option value="$PROJECT_DIR$/RegistrationWithMarker_SVD_TMinuit_SerialsFile_v2.py" />
+        <option value="$PROJECT_DIR$/RegistrationMultiwithSVD.py" />
+        <option value="$PROJECT_DIR$/RegistrationMultiwithSVD_v2.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="64" />
-    <option name="y" value="-11" />
-    <option name="width" value="1857" />
-    <option name="height" value="1092" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="8" />
+    <option name="y" value="59" />
+    <option name="width" value="1853" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -158,7 +162,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -176,6 +179,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -189,6 +193,11 @@
         <option name="myModuleName" value="RegistrationWithMarker" />
       </console-settings>
     </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -355,17 +364,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
+    <frame x="8" y="59" width="1853" height="1048" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24072053" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2409836" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291536" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291536" sideWeight="0.5021834" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291536" sideWeight="0.4978166" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31138977" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24126637" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32810867" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3277487" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39811912" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -421,40 +430,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/opencvchessboard.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#18#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/findContours.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1152">
-          <caret line="67" column="25" lean-forward="true" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/lib/python3.5/codecs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5544">
-          <caret line="308" column="0" lean-forward="false" selection-start-line="308" selection-start-column="0" selection-end-line="308" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fillhomograph.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <element signature="e#23#33#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/svd.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -592,13 +567,7 @@
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/.PyCharmCE2017.3/system/python_stubs/-907851842/cv2/cv2/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/291296634347_0_to_003726334247_1.out">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/291296634347_0_to_003726334247_1.out" />
     <entry file="file://$PROJECT_DIR$/svd.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="552">
@@ -659,13 +628,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/291296634347_to_003726334247.out">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/291296634347_to_003726334247.out" />
     <entry file="file://$PROJECT_DIR$/021401644747_0_to_291296634347_1.out">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -691,7 +654,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="26" column="13" lean-forward="false" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -734,17 +696,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="576">
           <caret line="34" column="65" lean-forward="false" selection-start-line="34" selection-start-column="54" selection-end-line="34" selection-end-column="65" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tranformation.out">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="72">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -766,9 +724,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="211" column="0" lean-forward="false" selection-start-line="211" selection-start-column="0" selection-end-line="211" selection-end-column="0" />
-          <folding>
-            <element signature="e#35#53#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -781,29 +736,55 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/calibrateKinectv2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7362">
+        <state relative-caret-position="864">
           <caret line="419" column="10" lean-forward="false" selection-start-line="419" selection-start-column="10" selection-end-line="419" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/RegistrationWithMarkerSVDTMinuit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2556">
-          <caret line="339" column="34" lean-forward="false" selection-start-line="339" selection-start-column="34" selection-end-line="339" selection-end-column="34" />
-          <folding />
+        <state relative-caret-position="4846">
+          <caret line="532" column="0" lean-forward="false" selection-start-line="532" selection-start-column="0" selection-end-line="532" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/RegistrationWithMarker_v2_tminuit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="726">
-          <caret line="366" column="27" lean-forward="false" selection-start-line="366" selection-start-column="27" selection-end-line="366" selection-end-column="27" />
+        <state relative-caret-position="0">
+          <caret line="471" column="23" lean-forward="false" selection-start-line="471" selection-start-column="3" selection-end-line="471" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RegistrationWithMarker_SVD_TMinuit_SerialsFile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="864">
+          <caret line="428" column="28" lean-forward="false" selection-start-line="428" selection-start-column="28" selection-end-line="428" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RegistrationMultiwithSVD.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7218">
+          <caret line="413" column="25" lean-forward="false" selection-start-line="413" selection-start-column="25" selection-end-line="413" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RegistrationWithMarker_SVD_TMinuit_SerialsFile_v2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7812">
+          <caret line="446" column="0" lean-forward="false" selection-start-line="446" selection-start-column="0" selection-end-line="446" selection-end-column="0" />
           <folding>
             <element signature="e#35#53#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RegistrationMultiwithSVD_v2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="134" column="39" lean-forward="false" selection-start-line="134" selection-start-column="39" selection-end-line="134" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>

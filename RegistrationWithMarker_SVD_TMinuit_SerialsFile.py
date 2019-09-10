@@ -10,6 +10,9 @@ from array import array
 import pdb
 import math
 from copy import deepcopy
+import subprocess
+import os, sys
+
 #import OpenEXR, Imath
 #import camParams as cam
 
@@ -188,8 +191,8 @@ def Ifit2():
     vstart = np.array([0.5, 0.5, 0.5,
                        0.,  0.,  0,
                        ])
-    step = np.array([0.00001, 0.00001, 0.00001,
-                     0.00001, 0.00001, 0.00001
+    step = np.array([0.0001, 0.0001, 0.0001,
+                     0.0001, 0.0001, 0.0001
                      ])
     min.SetParameter(0, "a0", vstart[0], step[0], -math.pi, math.pi)
     min.SetParameter(1, "a1", vstart[1], step[1], -math.pi, math.pi)
@@ -333,11 +336,11 @@ criteria = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 30, 0.001)
 
 class camera:
     def __init__(self, camserial):
-        if camserial == "021401644747":
-            self.cx=2.59602295e+02
-            self.cy=2.04101303e+02
-            self.fx=3.67825592e+02
-            self.fy=3.67825592e+02
+        if camserial == "011054343347":
+            self.cx=2.60037109e+02
+            self.cy=2.07033997e+02
+            self.fx=3.66541595e+02
+            self.fy=3.66541595e+02
         elif camserial == "291296634347":
             self.cx=2.57486603e+02
             self.cy=1.99466003e+02
@@ -358,7 +361,11 @@ class camera:
             self.cy=  2.04101303e+02
             self.fx=  3.67825592e+02
             self.fy= 3.67825592e+02
-
+        elif camserial == "127185440847":
+            self.cx= 2.54904007e+02
+            self.cy=  2.02395905e+02
+            self.fx=  3.66524414e+02
+            self.fy=  3.66524414e+02
 
         else:
             print("It's not defined camera serial")
@@ -419,7 +426,7 @@ def createContour(imgray, grayScale, clockwise=True):
         corners = cv2.approxPolyDP(contour, 0.1 * sqrt(cv2.contourArea(contour)), True)
         #    corners1Found = cv2.cornerSubPix(im,corners,(5,5),(-1,-1),criteria)
         hull = cv2.convexHull(corners, clockwise=clockwise)
-        if len(corners) == 8 and len(hull) == 6:
+        if len(corners) == 8 and len(hull) == 7:
             #print ("cv2.contourArea(contour)", cv2.contourArea(contour))
             contoursDist=[]
             if clockwise==True:
@@ -469,139 +476,171 @@ if __name__ == '__main__':
     import argparse
 
     parser = argparse.ArgumentParser(description="registrationMarker")
-    parser.add_argument("-f1", "--files1", dest="fileNames1", required=True,
-                        help="1st file ", metavar="FILE")
-    parser.add_argument("-f2", "--files2", dest="fileNames2",required=True,
-                        help="2nd file ", metavar="FILE")
+    parser.add_argument("-s", "--serialFile",dest="serialsFile", required=True,
+                        help="Kinect Serials File", metavar="SERIALS")
+
     args = parser.parse_args()
 
-    contoursList=[]
-    clockwise=False
-    objpoints=[]
+  #  print sorted(vars(args).items())
 
-    #for arg in vars(args):
-    for key, value in sorted(vars(args).items()):
-       # print (arg, getattr(args, arg))
-       # print ("key value", key, value)
-        imgFile=value
-        if imgFile is None:
+    serialsListContourRot=[]
+    # for key, value in sorted(vars(args).items()):
+    #     if key is "serials":
+    #         serialsList=value
+
+    # print ("serials ", serialsList)
+
+    with open(args.serialsFile, "r") as infile:
+        for line in infile:
+            serialsListContourRot.append((line.split()[0], line.split()[1]))
+
+    print ("serials ", serialsListContourRot)
+    referenceSerial=""
+    for k, value in enumerate(serialsListContourRot):
+	
+        print ("serial", k)
+        if (k==0):
+            referenceSerial=value[0]
             continue
-        depthFile=  imgFile.split('.')[0] + "_depth.png"
-
-#        exrFile = imgFile.split('.')[0] + ".exr"
-       # print("file: ",files[0].split('.')[0])
-        img, imgray, depth = loadColorDepthImage(imgFile, depthFile)
-
-       # img, imgray, depth = loadColorDepthImage("/home/hamit/pcl-sw/libfreenect2pclgrabber/build/0.png","/home/hamit/pcl-sw/libfreenect2pclgrabber/build/depth_0.exr")
-
-        #cv2.cvtColor(input, input_bgra, CV_BGR2BGRA);
-
-        windowName="TrackbarGrayScale"
-        cv2.namedWindow(windowName, cv2.WINDOW_NORMAL)
-        cv2.resizeWindow(windowName, 900,900)
-
-        mask = np.zeros(img.shape, np.uint8)
-       # mask = np.ones(img.shape[:2], dtype="uint8") * 255
-        cv2.createTrackbar( 'GrayScale', windowName, 0, 255, nothing)
+       # else:
+       #      referenceSerial= serialsListContourRot[k-1][0]
 
 
-
-        contours_found=True
-
-        clockwise= not clockwise
-
-        while(1):
-
-            imgcp=img.copy()
-
-            grayScale = cv2.getTrackbarPos('GrayScale',windowName)
-
-            contours = createContour(imgray, grayScale, clockwise )
+        os.system("/home/hamit/libfreenect2pclgrabber/devel/lib/kinect2grabber/rosPairKinectv2Viewer  --serials "+ referenceSerial+" "+value[0])
 
 
-            if len(contours) > 0:
-                cv2.drawContours(imgcp, contours, -1, (0, 255, 0), 1)
-                contours_found=True
-                for contour in contours[0]:
-                   # print ("contour:", contour[0])
-                    cv2.circle(imgcp, tuple(contour[0]), 1, (0, 0, 255) ,  -1);
-                cv2.imshow("TrackbarGrayScale", imgcp)
-            elif len(contours) == 0 and contours_found :
-                cv2.drawContours(mask, contours,-1, (255,255,255,255), 1)
+        print ("reference serial", value[0])
 
-               # img = cv2.bitwise_and(img, img, mask=mask)
-                removed = cv2.add(imgcp, mask)
-                cv2.imshow("TrackbarGrayScale", removed)
-
-            else:
-                cv2.imshow("TrackbarGrayScale", imgcp)
+        print("clockwise", bool(int(value[1])))
 
 
+        contoursList=[]
+        clockwise=True
+        objpoints=[]
 
 
-            imgcp=[]
-
-
-            if cv2.waitKey(1) == ord('q') :
-
-                tmpcamStr=imgFile.split('.')[0].split('/')[-1].split('_')[0]
-                #print ("tmpcamstr", tmpcamStr)
-
-                cont=computeCoords(contours,depth, camera(tmpcamStr))
-
-                if len(contours) < 1:
-                      continue
-                objpoints.append(cont)
-                contoursList.append([contours,  imgFile.split('.')[0].split('/')[-1]])
-
+        for i, sr in enumerate([referenceSerial, value[0]]):
+            imgFile=sr+"_"+str(i)+".png"
+            if imgFile is None:
+                continue
+            depthFile=  imgFile.split('.')[0] + "_depth.png"
+            exists = os.path.isfile(depthFile) and os.path.isfile(imgFile)
+            if not exists:
                 break
-
-        cv2.destroyAllWindows()
-
-    print ("ContoursList \n", contoursList)
-    objpointsNp=np.array(objpoints)
-    A=np.asmatrix(objpointsNp[1][:,0])
-    B=np.asmatrix(objpointsNp[0][:,0])
-    Aerr=np.asmatrix(objpointsNp[1][:,1])
-    Berr=np.asmatrix(objpointsNp[0][:,1])
-    print('{0} and \n {1}'.format(Aerr, Berr))
-    #printf("A,\n B")
-    # A=np.asmatrix(objpoints[1][:,0])
-    # B=np.asmatrix(objpoints[0][:,0])
-    #Ifit()
-    Ifit2()
-    # par=[2]*16
-    # fun(par)
-
-    ret_R, ret_t = rigid_transform_3D(A, B)
-
-    # A2 = (ret_R * A.T) + np.tile(ret_t, (1, n))
-    # A2 = A2.T
-    #
-    # # Find the error
-    # err = A2 - B
-    #
-    # err = np.multiply(err, err)
-    # err = np.sum(err)
-    # rmse = sqrt(err / n)
+            img, imgray, depth = loadColorDepthImage(imgFile, depthFile)
 
 
-    print ("Rotation")
-    print (ret_R)
-    print ("")
 
-    print ("Translation")
-    print (ret_t)
+            windowName="TrackbarGrayScale"
+            cv2.namedWindow(windowName, cv2.WINDOW_NORMAL)
+            cv2.resizeWindow(windowName, 900,900)
 
-    trans= np.vstack([np.hstack((ret_R,ret_t)),[0,0,0,1]])
-    transOutputFile=""
-    for increment,arg in enumerate(sorted(vars(args))):
-        a=getattr(args, arg)
-        a=a.split('.')[0].split('/')[-1]
-        transOutputFile+=a
-        if increment  < len(vars(args))-1:
-            transOutputFile+="_to_"
+            mask = np.zeros(img.shape, np.uint8)
+            cv2.createTrackbar( 'GrayScale', windowName, 0, 255, nothing)
 
-        #print ("fileName: ",transOutputFile)
 
-    np.savetxt(transOutputFile+'.out', trans , delimiter=' ',fmt='%1.8f')
+
+            contours_found=True
+            if (i > 0 and bool(int(value[1]) == True)):
+                clockwise= not clockwise
+            isbreak=False
+
+            while(1):
+
+                imgcp=img.copy()
+
+                grayScale = cv2.getTrackbarPos('GrayScale',windowName)
+
+                contours = createContour(imgray, grayScale, clockwise )
+
+
+                if len(contours) > 0:
+                    cv2.drawContours(imgcp, contours, -1, (0, 255, 0), 1)
+                    contours_found=True
+                    for contour in contours[0]:
+                        cv2.circle(imgcp, tuple(contour[0]), 1, (0, 0, 255) ,  -1);
+                    cv2.imshow("TrackbarGrayScale", imgcp)
+                elif len(contours) == 0 and contours_found :
+                    cv2.drawContours(mask, contours,-1, (255,255,255,255), 1)
+
+                    removed = cv2.add(imgcp, mask)
+                    cv2.imshow("TrackbarGrayScale", removed)
+
+                else:
+                    cv2.imshow("TrackbarGrayScale", imgcp)
+
+
+
+
+                imgcp=[]
+
+                c=cv2.waitKey(2)
+
+                if c == ord('s') :
+
+                    tmpcamStr=imgFile.split('.')[0].split('/')[-1].split('_')[0]
+
+                    cont=computeCoords(contours,depth, camera(tmpcamStr))
+
+                    if len(contours) < 1:
+                          continue
+                    objpoints.append(cont)
+                    contoursList.append([contours,  imgFile.split('.')[0].split('/')[-1]])
+
+                    break
+                elif c == ord('q') :
+                    isbreak=True
+                    break
+
+            cv2.destroyAllWindows()
+
+        if isbreak is True:
+            continue
+        print ("ContoursList \n", contoursList)
+        objpointsNp=np.array(objpoints)
+        A=np.asmatrix(objpointsNp[1][:,0])
+        B=np.asmatrix(objpointsNp[0][:,0])
+        Aerr=np.asmatrix(objpointsNp[1][:,1])
+        Berr=np.asmatrix(objpointsNp[0][:,1])
+        print('{0} and \n {1}'.format(Aerr, Berr))
+        #printf("A,\n B")
+        # A=np.asmatrix(objpoints[1][:,0])
+        # B=np.asmatrix(objpoints[0][:,0])
+        #Ifit()
+        Ifit2()
+        # par=[2]*16
+        # fun(par)
+
+        ret_R, ret_t = rigid_transform_3D(A, B)
+
+        # A2 = (ret_R * A.T) + np.tile(ret_t, (1, n))
+        # A2 = A2.T
+        #
+        # # Find the error
+        # err = A2 - B
+        #
+        # err = np.multiply(err, err)
+        # err = np.sum(err)
+        # rmse = sqrt(err / n)
+
+
+        print ("Rotation")
+        print (ret_R)
+        print ("")
+
+        print ("Translation")
+        print (ret_t)
+
+        trans= np.vstack([np.hstack((ret_R,ret_t)),[0,0,0,1]])
+        transOutputFile=""
+        for increment,arg in enumerate([referenceSerial, value[0]]):
+
+            a=arg.split('.')[0].split('/')[-1]
+            transOutputFile+=a
+            if increment  < 1:
+                transOutputFile+="_to_"
+
+            #print ("fileName: ",transOutputFile)
+
+        np.savetxt(transOutputFile+'.out', trans , delimiter=' ',fmt='%1.8f')
+        np.savetxt(str(k)+'.out', trans , delimiter=' ',fmt='%1.8f')

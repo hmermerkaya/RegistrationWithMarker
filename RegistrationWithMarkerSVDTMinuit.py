@@ -351,6 +351,22 @@ class camera:
             self.cy=2.01162506e+02
             self.fx=3.64941895e+02
             self.fy=3.64941895e+02
+        elif camserial == "097663440347":
+            self.cx=2.63912109e+02
+            self.cy=2.03802994e+02
+            self.fx=3.65381500e+02
+            self.fy=3.65381500e+02
+        elif camserial == "021401644747":
+            self.cx= 2.59602295e+02
+            self.cy=  2.04101303e+02
+            self.fx=  3.67825592e+02
+            self.fy= 3.67825592e+02
+        elif camserial == "127185440847":
+            self.cx= 2.54904007e+02
+            self.cy=  2.02395905e+02
+            self.fx=  3.66524414e+02
+            self.fy=  3.66524414e+02
+
         else:
             print("It's not defined camera serial")
 
@@ -465,19 +481,22 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
 
-    print sorted(vars(args).items())
+  #  print sorted(vars(args).items())
 
     serialsList=[]
     for key, value in sorted(vars(args).items()):
         if key is "serials":
             serialsList=value
+    print ("serials ", serialsList)
+
+
+
 
     for k, serial in enumerate(serialsList):
         if k >= len(serialsList)-1:
             continue
-        os.system ("/home/hamit/pcl-sw/libfreenect2pclgrabber/build/MultiKinect2Grabber"+" 3 " +serialsList[k]+" "+serialsList[k+1]+" 1")
-   # subprocess.call(["/home/hamit/pcl-sw/libfreenect2pclgrabber/build", "-l", "/etc/resolv.conf"])
-   # for key, value in sorted(vars(args).items()):
+     #   os.system ("/home/hamit/pcl-sw/libfreenect2pclgrabber/build/MultiKinect2Grabber"+" 3 " +serialsList[k]+" "+serialsList[k+1]+" 1")
+        os.system("/home/hamit/libfreenect2pclgrabber/devel/lib/kinect2grabber/rosPairKinectv2Viewer  --serials "+ serialsList[k]+" "+serialsList[k+1] )
 
 
 
@@ -489,20 +508,16 @@ if __name__ == '__main__':
 
 
         for i, value in enumerate([serialsList[k], serialsList[k+1]]):
-           # print (arg, getattr(args, arg))
-           # print ("key value", key, value)
             imgFile=value+"_"+str(i)+".png"
             if imgFile is None:
                 continue
             depthFile=  imgFile.split('.')[0] + "_depth.png"
             print imgFile, depthFile
-    #        exrFile = imgFile.split('.')[0] + ".exr"
            # print("file: ",files[0].split('.')[0])
             img, imgray, depth = loadColorDepthImage(imgFile, depthFile)
 
            # img, imgray, depth = loadColorDepthImage("/home/hamit/pcl-sw/libfreenect2pclgrabber/build/0.png","/home/hamit/pcl-sw/libfreenect2pclgrabber/build/depth_0.exr")
 
-            #cv2.cvtColor(input, input_bgra, CV_BGR2BGRA);
 
             windowName="TrackbarGrayScale"
             cv2.namedWindow(windowName, cv2.WINDOW_NORMAL)
@@ -551,6 +566,7 @@ if __name__ == '__main__':
                 imgcp=[]
 
                 c=cv2.waitKey(2)
+
                 if c == ord('s') :
 
                     tmpcamStr=imgFile.split('.')[0].split('/')[-1].split('_')[0]
@@ -569,6 +585,7 @@ if __name__ == '__main__':
                     break
 
             cv2.destroyAllWindows()
+
         if isbreak is True:
             continue
         print ("ContoursList \n", contoursList)
